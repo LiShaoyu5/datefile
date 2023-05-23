@@ -96,10 +96,13 @@ with st.form(key='show_data'):
     
     submit_button = st.form_submit_button(label='查询')
     if submit_button:
-        data = pd.read_excel('data.xlsx')
-        data['日期'] = pd.to_datetime(data['日期'])
-        data = data[(data['日期'] >= d1) & (data['日期'] <= d2)]
-        st.write(data)
+        try:
+            data = pd.read_excel('data.xlsx')
+            data['日期'] = pd.to_datetime(data['日期'])
+            data = data[(data['日期'] >= d1) & (data['日期'] <= d2)]
+            st.write(data)
+        except:
+            st.write('无数据！')
         
 with st.form(key='delete_data'):
     submit_button = st.form_submit_button(label='删除数据')
