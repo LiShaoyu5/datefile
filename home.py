@@ -4,8 +4,7 @@ import os
 import re
 import openpyxl
 
-a = openpyxl.Workbook()
-del a
+
 
 def read_data(file):
     # st.write(file.name)
@@ -101,3 +100,9 @@ with st.form(key='show_data'):
         data['日期'] = pd.to_datetime(data['日期'])
         data = data[(data['日期'] >= d1) & (data['日期'] <= d2)]
         st.write(data)
+        
+with st.form(key='delete_data'):
+    submit_button = st.form_submit_button(label='删除数据')
+    if submit_button:
+        if os.path.exists('data.xlsx'):
+            os.remove('data.xlsx')
