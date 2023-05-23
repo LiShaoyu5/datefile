@@ -4,6 +4,9 @@ import os
 import re
 import openpyxl
 
+a = openpyxl.Workbook()
+del a
+
 def read_data(file):
     # st.write(file.name)
     # xxxx. pattern in file.name:
