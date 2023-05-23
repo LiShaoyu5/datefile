@@ -30,10 +30,10 @@ def read_data(file):
         if not i.startswith('Unnamed'):
             index = i
             data[index] = {}
-            for j, col in row.items:
+            for j, col in row.items():
                 data[index][j] = 0
         else:
-            for j, col in row.items:
+            for j, col in row.items():
                 try:
                     data[index][j] += col
                 except:
