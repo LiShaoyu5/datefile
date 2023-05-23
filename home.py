@@ -66,7 +66,7 @@ def read_data(file):
 
 with st.form(key='read_data'):
     file_path = st.file_uploader(label='选择文件', accept_multiple_files=False)
-    submit_button = st.form_submit_button(label='展示')
+    submit_button = st.form_submit_button(label='提交')
     if submit_button:
         data = read_data(file_path)
         if os.path.exists('data.xlsx'):
